@@ -495,7 +495,7 @@ b = ""
 
 for i in range(len(a) - 1, -1, -1):
     b+=a[i] # it will save the reverse string in b
-"""
+
 
 # Q9 ----> Check string is Pallindrome or not
 
@@ -536,3 +536,80 @@ for i in str1:
 print("Chars =", chars)
 print("Digits =", digits)
 print("Symbols =", symbols)
+
+
+# While loop (give condition till condition is true while loop runs) page 25.
+a = 1
+while a <= 30:
+    print(a)
+    a += 1
+
+
+# questions on while loop
+
+# Q1---> Separate each digit of a number and print it on the new line.
+
+a = int(input("Enter any number here:-"))
+number = 0
+
+while a > 0:
+    print(a % 10)
+    a //= 10
+
+
+# Q2 ---> Accept a number and print its reverse
+a = int(input("Enter any number here:-"))
+rev = 0
+
+while a > 0:
+    rev = rev * 10 + a % 10
+    a //= 10
+
+print(rev)
+
+
+# Q3 ---> Accept a number and check if it is a pallindromic number
+a = int(input("Enter any number here:-"))
+rev = 0
+copy = a
+while a > 0:
+    rev = rev * 10 + a % 10
+    a //= 10
+
+print(rev)
+print(copy)
+if rev == copy:
+    print(" yes it is a pallandromic number")
+
+else:
+    print(" No it is not a pallondromic number")
+"""
+
+# Create a random number guessing game with python.
+# we use here a library of python called random that generates random number
+
+import random
+
+num = random.randint(1, 10)  # it includes both parameters also
+tries = 0
+print(num)
+while True:
+
+    guess = int(input("Please enter your number"))
+    tries += 1
+
+    if guess == num:  # this one is for guess condition
+
+        print(f"u won the game and take {tries} try to complete it")
+        break
+    elif guess < num:
+        print("try liitle bit higher")
+
+    elif guess > num:
+        print("try liitle bit lower")
+
+    if tries == 3:
+        print(
+            "you loose the game"
+        )  # this one is different conditional statement for differnt condition tries
+        break
