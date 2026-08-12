@@ -613,3 +613,5 @@ while True:
             "you loose the game"
         )  # this one is different conditional statement for differnt condition tries
         break
+
+# tommorrow is functions
