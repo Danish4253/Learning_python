@@ -689,7 +689,7 @@ hello()  # now value is stored at line ^88 hello() where we call it
 
 print(hello())
 
-"""
+
 
 # Data Structure page no. 29
 
@@ -718,3 +718,82 @@ x = 0
 while x < 3:
     x += 1
     print(x)
+
+
+
+# Q1 ---> Print positive and negative elements of an List
+
+l = [1, 3, 7, 5, -4, 9, 7, 2, -7, -6, -3]
+
+for i in l:
+    if i > 0:
+        print(i)
+for i in l:
+    if i < 0:
+        print(i)
+
+
+# Q1 ---> Mean of List elements
+
+l = [1, 3, 7, 5, -4, 9, 7, 2, -7, -6, -3]
+
+sum = 0
+
+for i in l:
+    sum += i
+
+print(f"Mean of the list is {sum/len(l)}")
+
+
+
+# Q3---> Find the greatest element and print its index too
+
+l = [1, 3, 7, 5, -4, 9, 7, 2, -7, -6, -3]
+largest = l[0]
+index = 0
+for i in range(0, len(l), 1):
+    if l[i] > largest:
+        largest = l[i]
+        index = i
+print(f" largest number is {largest} and at index value {index}")
+
+
+
+# Q4---> Find the second greatest element
+
+l = [1, 3, 7, 5, -4, 9, 7, 2, -7, -6, -3]
+
+largest = l[0]
+sec_largest = l[0]
+index_1 = 0
+index_2 = 0
+
+for i in range(len(l)):
+    if l[i] > largest:
+        sec_largest = largest
+        largest = l[i]
+        index_2 = index_1
+        index_1 = i
+    elif l[i]>sec_largest:
+    sec_largest = l[i]
+    index_2=i
+print(sec_largest, index_2)
+print(largest, index_1)
+
+
+# Q5---> Check if List is sorted or not
+
+l = [1, 3, 7, 5, -4, 9, 7, 2, -7, -6, -3]
+
+sorted = l[0]
+
+for i in range(len(l) - 1):
+    if l[i] < l[i + 1]:
+        continue
+    else:
+        print("not sorted")
+        break
+else:
+    print("yes sorted")
+
+"""
