@@ -583,7 +583,7 @@ if rev == copy:
 
 else:
     print(" No it is not a pallondromic number")
-"""
+
 
 # Create a random number guessing game with python.
 # we use here a library of python called random that generates random number
@@ -614,4 +614,107 @@ while True:
         )  # this one is different conditional statement for differnt condition tries
         break
 
-# tommorrow is functions
+
+
+# Functions
+def salam():
+    print("Assalamuaalikum")
+
+
+# here i create a function when i need this i can call this function
+
+salam()
+salam()
+salam()
+salam()
+salam()
+salam()
+
+
+# parametrs and arguments page no. 27
+
+
+def sum(a, b):
+    print(f"Sum of your numbers is: {a+b}")
+
+
+sum(2, 8)
+
+sum(int(input("Enter ist numbers")), int(input("Enter 2nd numbers")))
+
+
+def intro(name, age):
+    print(f"hello {name} your age is {age}")
+
+
+intro(age=19, name="danish")  # page 28. called KEY WORD ARGUMENT
+
+# here we dont use deafult  positions of 1---> 1 and 2----> 2 we directly use with parammeters name
+
+
+
+
+def cross(a, b=5):
+    # we make b here default if we didnt give value in calling fun. b will take default
+    print(f" multiply is {a*b}")
+
+
+cross(3)
+cross(9, 2)
+
+
+def pallindrome(st):
+    rev = ""
+    for i in st:
+        rev = i + rev  # for hello it will collect ist o,l,l,e,h and it is reverse
+    if rev == st:
+
+        print("yes a pallindrome")
+    else:
+        print("Not a pallindrome")
+
+
+pallindrome("nfgamany")
+
+
+
+# return we return the value to the line where we call it and like if we print the call function then we can see it
+
+
+def hello():
+    return "hello how are u"
+
+
+hello()  # now value is stored at line ^88 hello() where we call it
+
+print(hello())
+
+"""
+
+# Data Structure page no. 29
+
+# list or arrays
+
+a = [11, 12, 13, 14, 15, 16, 11, "Hello", print(), 33.3, False, ()]
+b = a.copy()  # here we use copy function to make shallow copy of list
+# list indexing and slicing is same as string
+
+print(a[0], a[11])
+print(a[0:5:2])  # slicing
+
+a[8] = "Changed"  # we modify it here
+
+print(a)
+
+print(b)
+
+for i in a:
+    print(i)
+    for i in range(len(a) - 1):
+        print(a[i])
+
+
+x = 0
+while x < 3:
+    x += 1
+    print(x)
