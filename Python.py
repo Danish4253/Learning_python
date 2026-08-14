@@ -797,3 +797,17 @@ else:
     print("yes sorted")
 
 """
+
+# Tuple page 33.
+
+a = (1, 2, 3, 4, 5, 5)
+print(a.index(5))
+
+# tuple unpacking
+
+a, b, c = (1, 2, 3)
+# here a gets ist b gets 2nd and then c gets 3rd value
+
+# set
+
+a = {1, 2, 3}
