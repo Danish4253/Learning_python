@@ -7,3 +7,5 @@
 ![Python set Methods](pics/set_methods2.png)
 
 ![Python set Methods](pics/dict_methods.png)
+
+![File handling](pics/file_handling.png)

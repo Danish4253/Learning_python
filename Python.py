@@ -1143,4 +1143,32 @@ except Exception as err:
 
 print("the club will start soon")
 
+
+
+# File handling
+file = open(r"D:\learning_py\chatgpt_q.py")
+
+print(file.read())  # r in open() for reading
+
+# creating and writting file
+
+a = open("superman.txt", "w")
+# and here my file automatically created
+
+a.write("Hello i am Danish and creted this file ")
+
+a.close()  # this one is important otherwise file remains open
+
+
+a = open("superman.txt", "a")  # append now and also creates
+a.write("now i am appending this file ")
+
+# and "x" only creates
+# there is picture in readme
+# and a file_handling project
+
+
+
+a = open("pactice_set.py", "x")  # for that i created here the file
+
 """
