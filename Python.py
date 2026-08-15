@@ -796,7 +796,7 @@ for i in range(len(l) - 1):
 else:
     print("yes sorted")
 
-"""
+
 
 # Tuple page 33.
 
@@ -810,4 +810,337 @@ a, b, c = (1, 2, 3)
 
 # set
 
-a = {1, 2, 3}
+a = {1, 2, 3, 4, 5}
+
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+union_set = A.union(B)  # {1, 2, 3, 4, 5}
+# or
+union_set1 = A | B
+
+intersection_set = A.intersection(B)  # {3}
+# or
+intersection_set1 = A & B
+
+difference_set = A.difference(B)  # {1, 2}
+# or
+difference_set1 = A - B
+
+symmetric_diff = A.symmetric_difference(B)  # {1, 2, 4, 5}
+# or
+symmetric_diff1 = A ^ B
+
+
+#  set contains keys and value pair
+
+
+
+introduction = {
+    "name": "Danish",
+    "age": 19,
+    "hobbies": "Barista",
+    "Friend": ["s", "j", "a"],  # look we can store list and tupple also in set
+    "tupple": (1, 2, 3, 4, 5),
+}
+
+print(introduction["name"])
+
+introduction["tupple"] = 1000  # here i change the tupple value into 1000
+
+print(
+    introduction
+)  # {'name': 'Danish', 'age': 19, 'hobbies': 'Barista', 'Friend': ['s', 'j', 'a'], 'tupple': 1000} output
+
+
+introduction.update({"sex": "male"})  # i update my set here and add this part also
+print(introduction)
+# or we can do it simply
+introduction["fav_lang"] = "python"  # this will also get updated like this in set
+print(introduction)
+
+
+# For deleting
+
+del introduction["tupple"]  # it will delete the tupple
+print(introduction)
+
+
+
+# looping over sets
+
+a = {
+    "name": "Danish",
+    "age": 19,
+    "hobbies": "Barista",
+    "Friend": ["s", "j", "a"],  # look we can store list and tupple also in set
+    "tupple": (1, 2, 3, 4, 5),
+}
+
+for i in a:
+    print(i)  # it will print / acess keys
+    print(a[i])  # it will acess values
+
+# or
+
+
+for i in a.values():
+    print(i)  # here it acess direct values
+
+for i in a.keys():  # or it will be default
+    print(i)
+
+# Deep copy and shallow copy
+
+a = [1, 2, 3]
+b = a
+b[0] = 100
+print(a)  # look here it is deep copy we change in b & a also gets changed
+
+c = a.copy()
+c[1] = 200
+print(c)
+print(a)  # look here it is shallow copy only change gets in c and be remains safe
+
+
+# Q1----> Write a Python script to merge two Python dictionaries
+
+student = {"name": "Danish", "age": 19, "course": "Backend", "marks": 92}
+
+laptop = {"brand": "HP", "model": "Victus", "ram": 16, "gpu": "RTX 3050"}
+
+for i in laptop:
+    student[i] = laptop[
+        i
+    ]  # means heree student[brand] = laptop[hp] here is no brand in student so it creates that in this
+print(student)
+
+# or
+merge = student | laptop
+print(merge)
+
+# or
+c = student.update(laptop)
+print(c)
+
+
+# Q2----> Write a Python program to sum all the values in a dictionary
+
+marks = {"Python": 85, "Math": 78, "English": 90, "Computer": 88, "Physics": 82}
+
+total = 0
+
+for i in marks.values():
+    total += i
+print(total)
+
+
+# Q3----> Count the frequency of each elements in a list(frequency = number of occurrences of an element)
+
+list = [1, 2, 2, 3, 3, 3, 4, 9, 9, 9, 1, 1, 4, 1]
+d = {}
+for i in list:
+    if i in d.keys():
+        d[i] += 1  # it sees hh now 1 is available so on value it +1
+    else:
+        d[i] = 1  # it make ist key in of 1 and put its value in it as 1
+print(d)
+
+
+# Q4---> Write a Python program to combine two dictionary by adding values for common keys
+
+d1 = {1: 10, 2: 20, 3: 30}
+d2 = {3: 30, 4: 40, 5: 50}
+
+
+for i in d2:
+    if i in d1.keys():
+        d1[i] += d2[i]
+    else:
+        d1[i] = d2[i]
+
+d1 = {1: 10, 2: 20, 3: 30}
+d2 = {3: 30, 4: 40, 5: 50}
+
+for i in d2:
+    if i in d1.keys():
+        d1[i] += d2[i]
+    else:
+        d1[i] = d2[i]
+
+
+# STEP 1:
+# for i in d2:
+
+# This means:
+# "Go through every KEY of d2."
+
+# So i will be:
+
+# i = 3
+# i = 4
+# i = 5
+
+
+# STEP 2:
+# if i in d1.keys():
+
+# This means:
+# "Check if this key already exists in d1."
+
+
+# STEP 3:
+# When i = 3:
+
+# 3 is already in d1.
+
+# So this runs:
+
+# d1[i] += d2[i]
+
+# Which means:
+
+# d1[3] = d1[3] + d2[3]
+#        = 30 + 30
+#        = 60
+
+# Now d1 becomes:
+
+# {1: 10, 2: 20, 3: 60}
+
+
+# STEP 4:
+# When i = 4:
+
+# 4 is NOT in d1.
+
+# So the else part runs:
+
+# d1[i] = d2[i]
+
+# Which means:
+
+# d1[4] = d2[4]
+#        = 40
+
+# Now d1 becomes:
+
+# {1: 10, 2: 20, 3: 60, 4: 40}
+
+
+# STEP 5:
+# When i = 5:
+
+# 5 is NOT in d1.
+
+# So:
+
+# d1[5] = d2[5]
+#        = 50
+
+# Final d1:
+
+# {1: 10, 2: 20, 3: 60, 4: 40, 5: 50}
+
+
+# EASY WAY TO REMEMBER:
+
+# If the key already exists in d1:
+#     ADD the values.
+
+# If the key does NOT exist in d1:
+#     ADD the new key and value.
+
+# So:
+
+# 3 exists → 30 + 30 = 60
+# 4 doesn't exist → add 4:40
+# 5 doesn't exist → add 5:50
+
+
+
+# Exception handling
+# in python from indentation and syntax error except all errors we can handle those e.g.,
+# when error came it didnt make run the other code after that so we can handle those
+
+# a = int(input("Enter your number:-"))
+
+
+# divide = (
+#     10 / a
+# )  # what if user give 0 so zeroDivisionError came so we can handle it to not distrub our other code
+
+# print(divide)
+
+a = int(input("Enter your number:-"))
+
+try:
+    divide = 10 / a
+    print(divide)
+except (
+    ZeroDivisionError
+):  # but error has 30 to 40 types how we can remember every name so simply use
+    # exception as err
+    print("undefined")
+
+print("we complete divide")
+
+
+
+# like
+
+a = int(input("Enter your number:-"))
+
+try:
+    divide = 10 / a
+    print(divide)
+except Exception as err:
+    print("undefined")
+else:
+    print(
+        "no exception here"
+    )  # this one is for coder to check exception came or not if else works except not and vise versa
+
+finally:
+    print("i will run no matter what")  # it will always run bruhhh
+print("we complete divide")
+
+
+# and we also can create error by raise eg
+
+age = int(input("enter your age"))
+
+if age < 10 or age > 18:
+    raise ValueError("Sorry u must have b/w 10 to 18")
+else:
+    print("ok u got the admission")
+
+
+print(
+    "hello"
+)  # but this line didnt execute so we can put the code block in try and except
+
+
+# output
+# enter your age5
+# Traceback (most recent call last):
+#   File "d:\learning_py\Python.py", line 1114, in <module>
+#     raise ValueError("Sorry u must have b/w 10 to 18")
+# ValueError: Sorry u must have b/w 10 to 18
+# PS D:\learning_py>
+
+
+age = int(input("enter your age"))
+
+try:
+    if age < 10 or age > 18:
+        raise ValueError("Sorry u must have b/w 10 to 18")
+    else:
+        print("ok u got the admission")
+
+except Exception as err:
+    print(f"so so {err}")
+
+print("the club will start soon")
+
+"""
