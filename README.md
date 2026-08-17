@@ -9,3 +9,5 @@
 ![Python set Methods](pics/dict_methods.png)
 
 ![File handling](pics/file_handling.png)
+
+**chapter 6 problem 5 important one for "in"**
