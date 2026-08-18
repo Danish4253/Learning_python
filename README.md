@@ -11,3 +11,7 @@
 ![File handling](pics/file_handling.png)
 
 **chapter 6 problem 5 important one for "in"**
+
+end= "" ----> this doesnt make new line 
+
+round(67.23455,2) ----> this round function will round off the number till 2 decimal places
