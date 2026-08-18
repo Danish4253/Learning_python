@@ -1,10 +1,14 @@
-words = ["Donkey", "bad", "ganda"]
+l = ["bad", "Donkey", "gf", "touch"]
+with open(
+    "The-Ultimate-Python-Course-main/The-Ultimate-Python-Course-main/Chapter 9 - PS/file.txt",
+    "r",
+) as f:
+    a = f.read()
+    for i in l:
 
-with open("file.txt", "r") as f:
-    content = f.read()
-
-for word in words:
-    content = content.replace(word, "#" * len(word))
-
-with open("file.txt", "w") as f:
-    f.write(content)
+        a = a.replace(i, "*" * len(i))
+with open(
+    "The-Ultimate-Python-Course-main/The-Ultimate-Python-Course-main/Chapter 9 - PS/file.txt",
+    "w",
+) as f:
+    f.write(a)
