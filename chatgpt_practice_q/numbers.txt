@@ -1,0 +1,14 @@
+Numbers entered: [44, 55, 552, 585, 78, 78]
+
+Even/Odd:
+44 is Even
+55 is Odd
+552 is Even
+585 is Odd
+78 is Even
+78 is Even
+
+Largest number: 585
+Smallest number: 44
+Total numbers: 6
+Unique numbers: {552, 585, 44, 78, 55}
