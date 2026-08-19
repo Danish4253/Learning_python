@@ -1,12 +1,17 @@
-class Programmer:
-    company = "Microsoft"
-    def __init__(self, name, salary, pin):
-        self.name = name
-        self.salary = salary
-        self.pin = pin
+class programmer:
+    company = "microsoft"
+
+    def __init__(self, nama, paisa, zip):
+        self.name = nama
+        self.salary = paisa
+        self.pincode = zip
 
 
-p = Programmer("Harry", 1200000, 245001)
-print(p.name, p.salary, p.pin, p.company)
-r = Programmer("Rohan", 1200000, 245001)
-print(r.name, r.salary, r.pin, r.company)
+hello = programmer("Danish", 1200000, 192231)
+hello.language = "python"
+print(hello.company, hello.name, hello.salary, hello.pincode, hello.language)
+
+
+javid = programmer("javid", 1200000, 192231)
+javid.language = "js"
+print(javid.company, javid.name, javid.salary, javid.pincode, javid.language)

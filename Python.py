@@ -1172,3 +1172,17 @@ a.write("now i am appending this file ")
 a = open("pactice_set.py", "x")  # for that i created here the file
 
 """
+
+# Class and object ----> object oriented programming
+
+
+class Employee:
+    language = "Python"
+    salary = 120000
+
+
+Danish = Employee()
+
+Danish.mood = "sad"
+
+print(Danish.language, Danish.salary, Danish.mood)
