@@ -1187,4 +1187,234 @@ Danish.mood = "sad"
 
 print(Danish.language, Danish.salary, Danish.mood)
 
+
+
+
+class room:
+    a = 33  # attribute
+
+    def table(self):  # methods
+        print("hello there is a laptop")
+
+    print("ist initilazation")
+
+
+print(room().a)
+room().table()
+
+
+obj = room()  # object
+print(obj.a)
+
+obj2 = room()  # object
+print(obj2.a)
+
+
+
+class factory:
+    def __init__(self, company, material, zips, pockets):
+        self.company = company
+        self.material = material
+        self.zips = zips
+        self.pockets = pockets
+        print(
+            f"{self.company} wants {self.material} as material & {self.zips} zips & {self.pockets} as pockets "
+        )
+
+
+addidas = factory("addidas", "leather", 3, 2)
+nike = factory("nike", "cotton", 3, 5)
+
+print(nike.pockets)
+
+
+
+
+class factoryjammu:  # parent class
+    a = 2
+
+    def hello():
+        print("hello i am jammu factory")
+
+
+class factorykashmir(factoryjammu):  # child class
+    pass
+
+
+jammu = factoryjammu()
+print(jammu.a)
+
+kashmir = factorykashmir
+print(kashmir.a)
+
+
+
+# class animal:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def show(self):
+#         print(f"hi your name is {self.name} & age is {self.age}")
+
+
+# class human(animal):
+#     def __init__(
+#         self, name, age
+#     ):  # here came error becoz 2nd one is child and has access to parent  but cant show them so we use super fun
+#         self.age = age
+
+
+# a = animal("lion")
+# a.show()
+
+# b = human("Danish", 19)
+# b.show()
+
+
+# so we write it another way
+
+
+class animal:
+    def __init__(self, name):
+        self.name = name
+
+    def show(self):
+        print(f"hi your name is {self.name} & age is {self.age}")
+
+
+class human(animal):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+
+
+a = animal("lion")
+# a.show()
+
+b = human("Danish", 19)
+b.show()
+
+
+
+# easy way to do it is use show function also in 2nd to not get error in parent
+
+
+class animal:
+    def __init__(self, name):
+        self.name = name
+
+    def show(self):
+        print(f"hi your name is {self.name} ")
+
+
+class human(animal):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+
+    def show(self):
+        print(f"hi your name is {self.name} & age is {self.age}")
+
+
+a = animal("lion")
+a.show()
+
+b = human("Danish", 19)
+b.show()
+
+
+class human:
+    pass
+
+
+class animal:
+    pass
+
+
+class robot(human, animal):  # multiple class inherit it can inherit more classes now
+    pass
+
+
+
+
+# private attributes
+
+
+class A:
+    a = 1
+
+    def show(self):
+        print(self.a)
+
+
+hi = A()
+hi.show()  # look here we can easily acess the attribut and even we can change it
+
+hi.a = 2
+hi.show()
+# to keep it protected we use private attribute so we can only do __
+
+
+
+
+
+class A:
+    __a = 1
+
+    def show(self):
+        print(
+            A.__a
+        )  # to use it we can use it in own class only and with class name only
+
+
+hi = A()
+hi.show()
+
+hi.__a = 2  # it didnt change now
+hi.show()
+
 """
+
+from abc import ABC, abstractmethod
+
+
+class abstract(ABC):
+    @abstractmethod
+    def perimeter(
+        self,
+    ):  # now these attributes cant pass to child when @abstractmethod is given on any attribute
+        pass
+
+    @abstractmethod
+    def area(self):
+        pass
+
+
+class Square(abstract):
+    def __init__(self, side):
+        self.side = side
+
+    def perimeter(self):
+        print("i have created")
+
+    def area(self):
+        print("I have created this ")
+
+
+class Circle(abstract):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def perimeter(self):
+        print("i have created")
+
+    def area(self):
+        print("I have created this ")
+
+
+obj = Circle(7)
+obj2 = Square(12)
+
+
+# Dunder methods
+# use chatgpt for dunder methods in python and their use cases and how to use them easy pizy lemon squeezy
