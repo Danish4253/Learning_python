@@ -1373,7 +1373,7 @@ hi.show()
 hi.__a = 2  # it didnt change now
 hi.show()
 
-"""
+
 
 from abc import ABC, abstractmethod
 
@@ -1418,3 +1418,197 @@ obj2 = Square(12)
 
 # Dunder methods
 # use chatgpt for dunder methods in python and their use cases and how to use them easy pizy lemon squeezy
+
+
+
+# decorate
+
+
+def decorate(a):  # a is hello here
+    def wrapper():
+        print("hi")
+        a()
+        print("bye")
+
+    return wrapper
+
+
+@decorate
+def hello():
+    print("how are u")
+
+
+hello()
+
+# 66 page number important
+
+
+def addition(a, b):
+    sum = 0
+    sum = a + b
+    print(sum)
+
+
+addition(
+    2, 3, 4, 5
+)  # if we send more arguments than parameters then it shows error for that we use
+
+
+
+# Args
+
+
+def addition(*args):  # it makes arguments a tuple
+
+    print(args)  # (2, 4, 5, 7, 9, 3, 0, 1) output
+    sum = 0
+    for i in args:
+        sum += i
+    print(sum)
+
+
+addition(2, 3, 5)
+
+
+# args means arguments
+
+# kwargs means key word arguments
+
+
+def addition(a, b):
+    sum = 0
+    sum = a + b
+    print(sum)
+
+
+addition(
+    a=2, b=3
+)  # for like this but if we have to send more arguments then use kwargs
+
+
+
+# kwargs
+
+
+def addition(**kwargs):  # it makes arguments a tuple
+
+    print(kwargs)  # here output is {'a': 2, 'b': 3, 'c': 5} dict with keys and values
+    sum = 0
+    for i in kwargs.values():
+        sum += i
+    print(sum)
+
+
+addition(a=2, b=3, c=5)
+
+
+
+# use of args and kwargs in decorate
+
+
+def decorate(func):
+    def wrapper(
+        *args, **kwargs
+    ):  # here i dont have to change arguments again and again
+        print("the addition to your numbers are ")
+        func(*args, **kwargs)
+        print("thankyou I hope you liked it ")
+
+    return wrapper
+
+
+@decorate
+def addition(a, b):
+    print(f"your total is {a + b} ")
+
+
+addition(
+    12, 67
+)  # how many i can give here using args and kwargs we dont need to change them again and again
+
+
+# lambda is simply used to take arguments and result give in same line easy pizzy eg
+
+
+def addition(a, b):
+    sum = 0
+    sum = a + b
+    print(sum)
+
+
+addition(2, 3)
+
+
+# in easy language
+
+addition2 = lambda a, b: a + b
+
+print(addition2(4, 5))  # easy pizzy lemon squeezy
+
+
+even = lambda a: "even" if a % 2 == 0 else "odd"
+
+print(even(4))
+
+
+
+# map filter and zip
+
+
+a = [1, 2, 3, 4, 5]
+
+
+def double(y):
+    return y * 2
+
+
+result = map(
+    double, a
+)  # "Take the function double and apply it to the values inside a. # map used for that
+print(list(result))  # output [2, 4, 6, 8, 10]
+
+
+# so basically map is used for like doing any operation to list or other set dict etc
+#  but after the operation return same as list or set etc
+# 69 to 70 page number is best for that
+
+
+# Checks each item using a function (a test
+# Keeps only the items that pass the test (i.e., return True)
+# filter works on only true or false condition page 70
+
+b = (1, 2, 3, 4, 5, 33, 45, 60, 98, 56)
+
+
+def even(z):
+    return z % 2 == 0
+
+
+result2 = filter(even, b)  # it means apply filter even function to tuple b
+
+print(list(result2))  # hey what ever we type here in that sequence we get our output
+print(tuple(result2))
+print(set(result2))
+# but only one can work at a time
+
+
+# modules and packages
+# simply we can use differnt files
+# e.g., if i make maths22.py and use it here
+
+
+import maths22
+
+print(maths22.addition(3, 2, 5, 6, 7))
+
+"""
+
+# its called module
+
+# pacakage is folder conatins one or more module
+# eg here if i make packagesss folder and add it maths22.py and hello.py then i will show how to use them
+
+
+from packagesss.hello import hi
+
+hi()
