@@ -1601,7 +1601,7 @@ import maths22
 
 print(maths22.addition(3, 2, 5, 6, 7))
 
-"""
+
 
 # its called module
 
@@ -1612,3 +1612,115 @@ print(maths22.addition(3, 2, 5, 6, 7))
 from packagesss.hello import hi
 
 hi()
+
+
+# Type definitions
+# You can send me your Python code, and I’ll add type definitions/type hints only,
+# without changing your existing logic, variable names, structure, or output.
+
+
+# Advanced Type Hints
+# Python's (typing) module provides more advanced type hints, such as List, Tuple, Dict and Union.
+from typing import List, Tuple, Dict, Union
+
+# List of integers
+numbers: List[int] = [1, 2, 3, 4, 5]
+# Tuple of a string and an integer
+person: Tuple[str, int] = ("Alice", 30)
+# Dictionary with string keys and integer values
+scores: Dict[str, int] = {"Alice": 90, "Bob": 85}
+# Union type
+identifier: Union[int, str] = "ID123"
+
+
+# Match case
+
+
+# it matches the given match with case e.g.,
+
+
+def enter(a):
+    match a:
+        case 200:
+            return "Ok 200"
+        case 400:
+            return "no 400"
+        case 30:
+            return "bruhh 30 seriously"
+        case _:  # if no one matches
+            return "wrong input"
+
+
+print(enter(5))
+
+# Merge dict
+
+d1 = {"a": 1, "b": 2}
+d2 = {"c": 3, "d": 4}
+d3 = {"e": 5, "f": 6}
+
+final = d1 | d2 | d3
+
+print(final)
+# output {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6}
+
+
+
+
+# we can open multiple files with "with" also e.g.,
+
+with open("file.txt", "r") as f1, open("anotherfile.txt", "r") as f2:
+    print(f1.read())
+    print(f2.read())
+
+
+
+
+# global keyword
+# time stamp 8:42 in python of harry
+
+
+# enumarate
+
+l = [
+    2,
+    4,
+    6,
+    7,
+    8,
+    75,
+    4,
+    3,
+    3,
+    4,
+    5,
+    67,
+    8,
+]
+index = 0
+for item in l:
+    print(f"the index number {index} has item {item}")
+    index += 1
+"""
+
+# this thing can be simplified using enumarate fun # important enumarate is important
+
+
+l = [
+    2763737,
+    4,
+    6,
+    7,
+    8,
+    75,
+    4,
+    3,
+    3,
+    4,
+    5,
+    67,
+    8,
+]
+
+for index, item in enumerate(l):  # allows us to use both index and item in a list
+    print(f"the index number {index} has item {item}")
