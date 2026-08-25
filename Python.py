@@ -1701,7 +1701,7 @@ index = 0
 for item in l:
     print(f"the index number {index} has item {item}")
     index += 1
-"""
+
 
 # this thing can be simplified using enumarate fun # important enumarate is important
 
@@ -1724,3 +1724,12 @@ l = [
 
 for index, item in enumerate(l):  # allows us to use both index and item in a list
     print(f"the index number {index} has item {item}")
+
+"""
+
+# Join method
+
+a = ["Hello", "how", "byy"]
+
+b = "----".join(a)  # output Hello----how----byy
+print(b)
